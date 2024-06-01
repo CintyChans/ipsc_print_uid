@@ -1,0 +1,39 @@
+{
+    "slave_addr": "1161",
+    "tag_firmware_path": "",
+    "gateway_firmware_path": "",
+    "anchor_firmware_path": "D:/Desktop/WORK/TEST/python/ips_api_test/zebra/ipsc_uid_print_tool/ipsc_anchor_v1.5.0.0_nrf52840_full.bin",
+    "test_time_val": 10,
+    "LVar": 1.0,
+    "HVar": 1.0,
+    "set_value": {
+        "dis": [
+            5.0,
+            0.2
+        ],
+        "wakeup_time": [
+            3600.0,
+            100.0
+        ],
+        "master2slave_plr": 0.2,
+        "slave2master_plr": 0.2,
+        "master2slave_rx_rssi": [
+            0.0,
+            4.0
+        ],
+        "slave2master_rx_rssi": [
+            0.0,
+            5.0
+        ],
+        "master2slave_uwb_clock_offset_ppm": [
+            0.7,
+            0.5
+        ],
+        "slave2master_uwb_clock_offset_ppm": [
+            0.6,
+            0.5
+        ],
+        "addtive_rtc_clock_offset_ppm": 2.0,
+        "abs_rtc_clock_offset_ppm": 4.0
+    }
+}
