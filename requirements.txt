@@ -3,5 +3,6 @@
 numpy==1.26.2
 pylink-square==1.2.0
 pywin32==306
-matplotlib
-pandas==2.1.4
+matplotlib==3.9.0
+pandas==2.1.4 
+request==2.31.0
