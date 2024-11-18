@@ -1,39 +1,83 @@
 {
-    "slave_addr": "1161",
-    "tag_firmware_path": "",
+    "slave_addr": [
+        "25186",
+        "43266",
+        "19778",
+        "57378"
+    ],
+    "default_slave_addr": "57378",
+    "tag_firmware_path": "Z:/Sharing/ChenSiTing(Sharing)/ipsc_tag_v2.3.1.0_nrf52840_full.bin",
     "gateway_firmware_path": "",
-    "anchor_firmware_path": "D:/Desktop/WORK/TEST/python/ips_api_test/zebra/ipsc_uid_print_tool/ipsc_anchor_v1.5.0.0_nrf52840_full.bin",
-    "test_time_val": 10,
-    "LVar": 1.0,
-    "HVar": 1.0,
+    "anchor_firmware_path": "D:/Desktop/WORK/IPS/ipsc_anchor_v2.1.1.0_nrf52840_full.bin",
+    "P": 1,
+    "LVar": 2.0,
+    "HVar": 0.0,
+    "io_test_val": 0,
+    "product_test_master": {
+        "val": 1,
+        "test_time": 20
+    },
+    "logo": 1,
     "set_value": {
-        "dis": [
-            5.0,
-            0.2
-        ],
-        "wakeup_time": [
-            3600.0,
-            100.0
-        ],
-        "master2slave_plr": 0.2,
-        "slave2master_plr": 0.2,
-        "master2slave_rx_rssi": [
-            0.0,
-            4.0
-        ],
-        "slave2master_rx_rssi": [
-            0.0,
-            5.0
-        ],
-        "master2slave_uwb_clock_offset_ppm": [
-            0.7,
-            0.5
-        ],
-        "slave2master_uwb_clock_offset_ppm": [
-            0.6,
-            0.5
-        ],
-        "addtive_rtc_clock_offset_ppm": 2.0,
-        "abs_rtc_clock_offset_ppm": 4.0
+        "dis": {
+            "truth": 10.0,
+            "err_abs_max": 0.3,
+            "std_max": 0.1,
+            "abnormal_rate_max": 0.05
+        },
+        "rssi": {
+            "master2slave": {
+                "mean": -100.0,
+                "std_max": 10.0
+            },
+            "slave2master": {
+                "mean": -100.0,
+                "std_max": 10.0
+            }
+        },
+        "wakeup_time": {
+            "max": 4500.0,
+            "min": 2000.0,
+            "std_max": 100.0
+        },
+        "plr": {
+            "master2slave": 0.1,
+            "slave2master": 0.06
+        },
+        "uwb_clock_offset_ppm": {
+            "master2slave": {
+                "abs_mean_max": 2.0,
+                "std_max": 1.0
+            },
+            "slave2master": {
+                "abs_mean_max": 2.0,
+                "std_max": 1.0
+            }
+        },
+        "rtc_clock_offset_ppm": {
+            "master2slave_abs": 20.0,
+            "slave2master_abs": 20.0,
+            "add": 3.0
+        }
+    },
+    "manufacture_device": {
+        "url": "https://admin.nooploop.com:17204/api/v1/extern/manufacture_device",
+        "batch_url": "https://admin.nooploop.com:17204/api/v1/extern/manufacture_batch",
+        "version-batch": "1-2",
+        "gateway": {
+            "model": "G1P",
+            "version": "1.0",
+            "batch": "1"
+        },
+        "anchor": {
+            "model": "U1P",
+            "version": "1.0",
+            "batch": "1"
+        },
+        "tag": {
+            "model": "BlockTag",
+            "version": "1.0",
+            "batch": "2"
+        }
     }
 }

@@ -13,13 +13,16 @@ class NoNewlineFileHandler(logging.FileHandler):
         except Exception:
             self.handleError(record)
 
+    def close(self):
+        super().close()
 
-def init(uid, log_level=logging.INFO):
+
+def init(uid, role, firmware, log_level=logging.INFO):
     file_dir = "logs"
     if not os.path.exists(file_dir):
         os.makedirs(file_dir)
     formatter = logging.Formatter("%(message)s")
-    file_name = f"{file_dir}/{uid}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+    file_name = f"{file_dir}/{datetime.now().strftime('%Y%m%d_%H%M%S')}-{uid}-{role}-{firmware}.log"
     file_handler = NoNewlineFileHandler(file_name)
     file_handler.setFormatter(formatter)
 
@@ -28,4 +31,4 @@ def init(uid, log_level=logging.INFO):
     logger.setLevel(log_level)
 
     logging.info(f"logger init, file_name={file_name}")
-    return file_name, logger
+    return file_name, logger, file_handler
