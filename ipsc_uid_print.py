@@ -280,8 +280,6 @@ class jlink:
                 0, list(bytearray(f"arg_flush", "utf-8") + b"\x0A\x00")
             )
             ipsc_uid_print_win.add_log("arg_flush")
-            
- 
 
         except Exception as e:
             tb = traceback.extract_tb(e.__traceback__)
@@ -715,6 +713,7 @@ class jlink:
             if self.flash_firmware():  # 下载运行打印
 
                 self.set_hardware_info()
+                time.sleep(1)
                 self.test()  # 进入配置模式，io测试， product_test_master
         except Exception as e:
             tb = traceback.extract_tb(e.__traceback__)

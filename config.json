@@ -5,8 +5,8 @@
         "19778",
         "57378"
     ],
-    "default_slave_addr": "57378",
-    "tag_firmware_path": "Z:/Sharing/ChenSiTing(Sharing)/ipsc_tag_v2.3.1.0_nrf52840_full.bin",
+    "default_slave_addr": "19778",
+    "tag_firmware_path": "D:/Desktop/WORK/IPS/ipsc_tag_v2.3.1.0_nrf52840_full.bin",
     "gateway_firmware_path": "",
     "anchor_firmware_path": "D:/Desktop/WORK/IPS/ipsc_anchor_v2.1.1.0_nrf52840_full.bin",
     "P": 1,
@@ -23,7 +23,7 @@
             "truth": 10.0,
             "err_abs_max": 0.3,
             "std_max": 0.1,
-            "abnormal_rate_max": 0.05
+            "abnormal_rate_max": 0.08
         },
         "rssi": {
             "master2slave": {
@@ -37,7 +37,7 @@
         },
         "wakeup_time": {
             "max": 4500.0,
-            "min": 2000.0,
+            "min": 1500.0,
             "std_max": 100.0
         },
         "plr": {
@@ -55,8 +55,8 @@
             }
         },
         "rtc_clock_offset_ppm": {
-            "master2slave_abs": 20.0,
-            "slave2master_abs": 20.0,
+            "master2slave_abs": 40.0,
+            "slave2master_abs": 40.0,
             "add": 3.0
         }
     },

@@ -108,10 +108,12 @@ def cal(filename, set_data, win):
         )
         if match:
             if init_rtc_clock_offset:
-                last_rtc_clock_offset = [eval(i) for i in match[0][1:]]
+                if eval(match[0][0]) > init_rtc_clock_offset[0]:
+                    last_rtc_clock_offset = [eval(i) for i in match[0]]
+                else:
+                    init_rtc_clock_offset = [eval(i) for i in match[0]]
             else:
-                if eval(match[0][0]) < 5:
-                    init_rtc_clock_offset = [eval(i) for i in match[0][1:]]
+                init_rtc_clock_offset = [eval(i) for i in match[0]]
     if not dis:
         return -1, -1
     wakeup_time = np.array(wakeup_time)
@@ -148,14 +150,14 @@ def cal(filename, set_data, win):
         "rtc_clock_offset_ppm": {
             "master2slave": (
                 1
-                - (last_rtc_clock_offset[0] - init_rtc_clock_offset[0])
-                / (last_rtc_clock_offset[3] - init_rtc_clock_offset[3])
+                - (last_rtc_clock_offset[1] - init_rtc_clock_offset[1])
+                / (last_rtc_clock_offset[4] - init_rtc_clock_offset[4])
             )
             * 1000000,
             "slave2master": (
                 1
-                - (last_rtc_clock_offset[2] - init_rtc_clock_offset[2])
-                / (last_rtc_clock_offset[1] - init_rtc_clock_offset[1])
+                - (last_rtc_clock_offset[3] - init_rtc_clock_offset[3])
+                / (last_rtc_clock_offset[2] - init_rtc_clock_offset[2])
             )
             * 1000000,
         },
